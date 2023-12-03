@@ -1,0 +1,200 @@
+phonopy:
+  version: "2.20.0"
+  calculator: abacus
+  frequency_unit_conversion_factor: 21.490680
+  symmetry_tolerance: 1.00000e-05
+  configuration:
+    atom_name: "Mo S"
+    dim: "2 2 2"
+    mesh: "8 8 1"
+    band: "0.375  0.375  0.750 0.000  0.000  0.000 0.500  0.000  0.500 0.625  0.250  0.625 0.500  0.500  0.500 0.000  0.000  0.000 0.500  0.250  0.750"
+    band_points: "101"
+    band_connection: ".TRUE."
+    calculator: "abacus"
+
+physical_unit:
+  atomic_mass: "AMU"
+  length: "au"
+  force_constants: "eV/angstrom.au"
+
+space_group:
+  type: "P-6m2"
+  number: 187
+  Hall_symbol: "P -6 2"
+
+supercell_matrix:
+- [   2,   0,   0 ]
+- [   0,   2,   0 ]
+- [   0,   0,   2 ]
+
+primitive_cell:
+  lattice:
+  - [     5.744767538000000,     0.000000000000000,     0.000000000000000 ] # a
+  - [    -2.872383769000000,     4.975114605003465,     0.000000000000000 ] # b
+  - [     0.000000000000000,     0.000000000000000,    34.487502468473224 ] # c
+  points:
+  - symbol: Mo # 1
+    coordinates: [  0.666666670000000,  0.333333330000000,  0.089041090000000 ]
+    mass: 95.960000
+    magnetic_moment: 0.00000000
+  - symbol: S  # 2
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.000000000000000 ]
+    mass: 32.065000
+    magnetic_moment: 0.00000000
+  - symbol: S  # 3
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.178082190000000 ]
+    mass: 32.065000
+    magnetic_moment: 0.00000000
+  reciprocal_lattice: # without 2pi
+  - [     0.174071447344960,     0.100500197422015,     0.000000000000000 ] # a*
+  - [     0.000000000000000,     0.201000394844031,     0.000000000000000 ] # b*
+  - [     0.000000000000000,     0.000000000000000,     0.028996010972791 ] # c*
+
+unit_cell:
+  lattice:
+  - [     5.744767538000000,     0.000000000000000,     0.000000000000000 ] # a
+  - [    -2.872383769000000,     4.975114605003465,     0.000000000000000 ] # b
+  - [     0.000000000000000,     0.000000000000000,    34.487502468473224 ] # c
+  points:
+  - symbol: Mo # 1
+    coordinates: [  0.666666670000000,  0.333333330000000,  0.089041090000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: S  # 2
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.000000000000000 ]
+    mass: 32.065000
+    reduced_to: 2
+    magnetic_moment: 0.00000000
+  - symbol: S  # 3
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.178082190000000 ]
+    mass: 32.065000
+    reduced_to: 3
+    magnetic_moment: 0.00000000
+
+supercell:
+  lattice:
+  - [    11.489535075999999,     0.000000000000000,     0.000000000000000 ] # a
+  - [    -5.744767538000000,     9.950229210006929,     0.000000000000000 ] # b
+  - [     0.000000000000000,     0.000000000000000,    68.975004936946448 ] # c
+  points:
+  - symbol: Mo # 1
+    coordinates: [  0.333333335000000,  0.166666665000000,  0.044520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 2
+    coordinates: [  0.833333335000000,  0.166666665000000,  0.044520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 3
+    coordinates: [  0.333333335000000,  0.666666665000000,  0.044520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 4
+    coordinates: [  0.833333335000000,  0.666666665000000,  0.044520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 5
+    coordinates: [  0.333333335000000,  0.166666665000000,  0.544520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 6
+    coordinates: [  0.833333335000000,  0.166666665000000,  0.544520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 7
+    coordinates: [  0.333333335000000,  0.666666665000000,  0.544520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: Mo # 8
+    coordinates: [  0.833333335000000,  0.666666665000000,  0.544520545000000 ]
+    mass: 95.960000
+    reduced_to: 1
+    magnetic_moment: 0.00000000
+  - symbol: S  # 9
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.000000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 10
+    coordinates: [  0.500000000000000,  0.000000000000000,  0.000000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 11
+    coordinates: [  0.000000000000000,  0.500000000000000,  0.000000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 12
+    coordinates: [  0.500000000000000,  0.500000000000000,  0.000000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 13
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.500000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 14
+    coordinates: [  0.500000000000000,  0.000000000000000,  0.500000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 15
+    coordinates: [  0.000000000000000,  0.500000000000000,  0.500000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 16
+    coordinates: [  0.500000000000000,  0.500000000000000,  0.500000000000000 ]
+    mass: 32.065000
+    reduced_to: 9
+    magnetic_moment: 0.00000000
+  - symbol: S  # 17
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.089041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 18
+    coordinates: [  0.500000000000000,  0.000000000000000,  0.089041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 19
+    coordinates: [  0.000000000000000,  0.500000000000000,  0.089041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 20
+    coordinates: [  0.500000000000000,  0.500000000000000,  0.089041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 21
+    coordinates: [  0.000000000000000,  0.000000000000000,  0.589041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 22
+    coordinates: [  0.500000000000000,  0.000000000000000,  0.589041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 23
+    coordinates: [  0.000000000000000,  0.500000000000000,  0.589041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000
+  - symbol: S  # 24
+    coordinates: [  0.500000000000000,  0.500000000000000,  0.589041095000000 ]
+    mass: 32.065000
+    reduced_to: 17
+    magnetic_moment: 0.00000000

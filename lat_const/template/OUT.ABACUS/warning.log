@@ -1,0 +1,7 @@
+ smearing_decision  warning : Fixed occupations,gauss broadening ignored
+ AUTO_SET gaussian_parameter to 0
+ In SCAN_BEGIN, can't find: LATTICE_VECTORS block.
+ Label orders in ATOMIC_POSITIONS and ATOMIC_SPECIES sections do not match!
+ Label read from ATOMIC_POSITIONS is Cartesian_angstrom
+ Label from ATOMIC_SPECIES is S
+ UnitCell::setup_cell  warning : Something wrong during read_atom_positions.

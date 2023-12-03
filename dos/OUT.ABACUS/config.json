@@ -1,0 +1,8 @@
+{
+	"tdosfile" : "DOS1_smearing.dat",
+	"efermi": 0.0457587036966,
+	"energy_range" : [-20, 15],
+	"dos_range" : [0, 8],
+	"figsize" : [14, 10],
+	"tdosfig" : "tdos.png"
+}

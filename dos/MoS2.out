@@ -1,0 +1,74 @@
+                                                                                     
+                              ABACUS v3.3.2
+
+               Atomic-orbital Based Ab-initio Computation at UStc                    
+
+                     Website: http://abacus.ustc.edu.cn/                             
+               Documentation: https://abacus.deepmodeling.com/                       
+                  Repository: https://github.com/abacusmodeling/abacus-develop       
+                              https://github.com/deepmodeling/abacus-develop         
+                      Commit: e39b50e (Fri Aug 18 16:14:25 2023 +0800)
+
+ Sun Dec  3 14:31:43 2023
+ MAKE THE DIR         : OUT.ABACUS/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Warning: the number of valence electrons in pseudopotential > 6 for Mo: [Kr] 4d5 5s1
+ Pseudopotentials with additional electrons can yield (more) accurate outcomes, but may be less efficient.
+ If you're confident that your chosen pseudopotential is appropriate, you can safely ignore this warning.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ UNIFORM GRID DIM     : 40 * 40 * 225
+ UNIFORM GRID DIM(BIG): 40 * 40 * 225
+ DONE(0.0755845  SEC) : SETUP UNITCELL
+ DONE(0.0798942  SEC) : INIT K-POINTS
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+ SPIN    KPOINTS         PROCESSORS  
+ 1       130             1           
+ ---------------------------------------------------------
+ Use plane wave basis
+ ---------------------------------------------------------
+ ELEMENT NATOM       XC          
+ Mo      1           
+ S       2           
+ ---------------------------------------------------------
+ Initial plane wave basis and FFT box
+ ---------------------------------------------------------
+ DONE(0.201141   SEC) : INIT PLANEWAVE
+ MEMORY FOR PSI (MB)  : 761.233
+ DONE(0.233109   SEC) : LOCAL POTENTIAL
+ DONE(0.259502   SEC) : NON-LOCAL POTENTIAL
+ DONE(0.259593   SEC) : INIT BASIS
+ -------------------------------------------
+ NONSELF-CONSISTENT : 
+ -------------------------------------------
+ START CHARGE      : file
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                       total               354.15         13        27        1e+02     %
+   Driver              driver_line         354.14         1         3.5e+02   1e+02     %
+   Ions                opt_ions            353.53         1         3.5e+02   1e+02     %
+   ESolver_KS_PW       othercalculation    353.53         1         3.5e+02   1e+02     %
+   ESolver_KS_PW       nscf                353.53         1         3.5e+02   1e+02     %
+   HSolverPW           solve               353.36         1         3.5e+02   1e+02     %
+   Nonlocal            getvnl              0.13247        130       0.001     0.037     %
+   pp_cell_vnl         getvnl              0.13231        130       0.001     0.037     %
+   DiagoIterAssist     diagH_subspace      17.912         485       0.037     5.1       %
+   OperatorPW          hPsi                254.2          142833    0.0018    72        %
+   Operator            EkineticPW          1.9834         142833    1.4e-05   0.56      %
+   Operator            VeffPW              233.23         142833    0.0016    66        %
+   PW_Basis_K          recip2real          143.88         153503    0.00094   41        %
+   PW_Basis_K          gathers_scatterp    25.168         153503    0.00016   7.1       %
+   PW_Basis_K          real2recip          86.697         153503    0.00056   24        %
+   PW_Basis_K          gatherp_scatters    10.954         153503    7.1e-05   3.1       %
+   Operator            NonlocalPW          9.6285         142833    6.7e-05   2.7       %
+   Nonlocal            add_nonlocal_pp     5.1061         142833    3.6e-05   1.4       %
+   DiagoIterAssist     LAPACK_subspace     0.17517        485       0.00036   0.049     %
+   DiagoCG             diag_once           328.34         485       0.68      93        %
+ ----------------------------------------------------------------------------------------
+
+ START  Time  : Sun Dec  3 14:31:43 2023
+ FINISH Time  : Sun Dec  3 14:37:38 2023
+ TOTAL  Time  : 355
+ SEE INFORMATION IN : OUT.ABACUS/

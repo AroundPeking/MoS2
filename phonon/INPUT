@@ -1,0 +1,16 @@
+INPUT_PARAMETERS
+#Parameters	(General)
+pseudo_dir              ./
+calculation             scf
+dft_functional		pbe
+cal_force		1
+stru_file		STRU-003
+#Parameters (Accuracy)
+ecutwfc			100
+scf_thr         	1e-8
+scf_nmax		100
+mixing_beta		0.1
+mixing_ndim		20
+mixing_gg0		1.0
+smearing_sigma		1e-3
+basis_type		lcao

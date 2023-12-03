@@ -1,0 +1,19 @@
+INPUT_PARAMETERS
+#Parameters	(General)
+pseudo_dir              ./
+calculation             nscf
+#out_chg			1
+init_chg		file
+out_dos			1
+pw_diag_thr		1e-10
+dft_functional		pbe
+#Parameters (Accuracy)
+ecutwfc			100
+scf_thr         	1e-8
+scf_nmax		100
+mixing_beta		0.1
+mixing_ndim		20
+mixing_gg0		1.0
+smearing_sigma		1e-3
+basis_type		pw
+latname			hexagonal

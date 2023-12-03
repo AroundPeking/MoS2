@@ -1,0 +1,20 @@
+ smearing_decision  warning : Fixed occupations,gauss broadening ignored
+ AUTO_SET gaussian_parameter to 0
+ In SCAN_BEGIN, can't find: LATTICE_VECTORS block.
+ In SCAN_BEGIN, can't find: <PP_MESH block.
+ In SCAN_BEGIN, can't find: <PP_MESH block.
+ AUTO_SET NBANDS to 23
+                            startmag_type = 2
+                       charge from rho_at = 13.9093
+                         charge should be = 14
+                            startmag_type = 2
+                       charge from rho_at = 5.98967
+                         charge should be = 6
+ Warning: negative or imaginary starting charge :  neg = -0.000161702 ima = 8.53115e-15 SPIN = 0
+
+ SETUP ATOMIC RHO FOR SPIN 1
+                 Electron number from rho = 26
+           total electron number from rho = 26
+                                should be = 26
+                 charge before normalized = 26
+                  charge after normalized = 26

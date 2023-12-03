@@ -1,0 +1,1179 @@
+                                                                                     
+                              ABACUS v3.3.2
+
+               Atomic-orbital Based Ab-initio Computation at UStc                    
+
+                     Website: http://abacus.ustc.edu.cn/                             
+               Documentation: https://abacus.deepmodeling.com/                       
+                  Repository: https://github.com/abacusmodeling/abacus-develop       
+                              https://github.com/deepmodeling/abacus-develop         
+                      Commit: e39b50e (Fri Aug 18 16:14:25 2023 +0800)
+
+    Start Time is Sun Dec  3 13:59:45 2023
+                                                                                     
+ ------------------------------------------------------------------------------------
+
+ READING GENERAL INFORMATION
+                           global_out_dir = OUT.ABACUS/
+                           global_in_card = INPUT
+                               pseudo_dir = 
+                              orbital_dir = 
+                                    DRANK = 1
+                                    DSIZE = 1
+                                   DCOLOR = 1
+                                    GRANK = 1
+                                    GSIZE = 1
+ The esolver type has been set to : ksdft_pw
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Reading atom information in unitcell:                              |
+ | From the input file and the structure file we know the number of   |
+ | different elments in this unitcell, then we list the detail        |
+ | information for each element, especially the zeta and polar atomic |
+ | orbital number for each element. The total atom number is counted. |
+ | We calculate the nearest atom distance for each atom and show the  |
+ | Cartesian and Direct coordinates for each atom. We list the file   |
+ | address for atomic orbitals. The volume and the lattice vectors    |
+ | in real and reciprocal space is also shown.                        |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+ READING UNITCELL INFORMATION
+                                    ntype = 2
+                  lattice constant (Bohr) = 5.74477
+              lattice constant (Angstrom) = 3.04
+
+ READING ATOM TYPE 1
+                               atom label = Mo
+                      L=0, number of zeta = 1
+                      L=1, number of zeta = 1
+                      L=2, number of zeta = 1
+             number of atom for this type = 1
+
+ READING ATOM TYPE 2
+                               atom label = S
+                      L=0, number of zeta = 1
+                      L=1, number of zeta = 1
+                      L=2, number of zeta = 1
+             number of atom for this type = 2
+
+                        TOTAL ATOM NUMBER = 3
+
+ DIRECT COORDINATES
+         atom                   x                   y                   z                 mag                  vx                  vy                  vz
+     taud_Mo1            0.666667            0.333333           0.0967742                   0                   0                   0                   0
+      taud_S1                   0                   0                   0                   0                   0                   0                   0
+      taud_S2                   0                   0            0.193548                   0                   0                   0                   0
+
+
+                          Volume (Bohr^3) = 1004.59
+                             Volume (A^3) = 148.864
+
+ Lattice vectors: (Cartesian coordinate: in unit of a_0)
+                   +1                  +0                  +0
+                 -0.5           +0.866025                  +0
+                   +0                  +0            +6.11842
+ Reciprocal vectors: (Cartesian coordinate: in unit of 2 pi/a_0)
+                   +1            +0.57735                  -0
+                   +0             +1.1547                  -0
+                   +0                  -0           +0.163441
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Reading pseudopotentials files:                                    |
+ | The pseudopotential file is in UPF format. The 'NC' indicates that |
+ | the type of pseudopotential is 'norm conserving'. Functional of    |
+ | exchange and correlation is decided by 4 given parameters in UPF   |
+ | file.  We also read in the 'core correction' if there exists.      |
+ | Also we can read the valence electrons number and the maximal      |
+ | angular momentum used in this pseudopotential. We also read in the |
+ | trail wave function, trail atomic density and local-pseudopotential|
+ | on logrithmic grid. The non-local pseudopotential projector is also|
+ | read in if there is any.                                           |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+                PAO radial cut off (Bohr) = 15
+
+ Read in pseudopotential file is Mo_ONCV_PBE-1.0.upf
+                     pseudopotential type = NC
+          exchange-correlation functional = PBE
+                 nonlocal core correction = 0
+                        valence electrons = 14
+                                     lmax = 2
+                           number of zeta = 0
+                     number of projectors = 6
+                           L of projector = 0
+                           L of projector = 0
+                           L of projector = 1
+                           L of projector = 1
+                           L of projector = 2
+                           L of projector = 2
+                PAO radial cut off (Bohr) = 15
+
+ Read in pseudopotential file is S_ONCV_PBE-1.0.upf
+                     pseudopotential type = NC
+          exchange-correlation functional = PBE
+                 nonlocal core correction = 0
+                        valence electrons = 6
+                                     lmax = 1
+                           number of zeta = 0
+                     number of projectors = 4
+                           L of projector = 0
+                           L of projector = 0
+                           L of projector = 1
+                           L of projector = 1
+     initial pseudo atomic orbital number = 0
+                                   NLOCAL = 27
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Warning: the number of valence electrons in pseudopotential > 6 for Mo: [Kr] 4d5 5s1
+ Pseudopotentials with additional electrons can yield (more) accurate outcomes, but may be less efficient.
+ If you're confident that your chosen pseudopotential is appropriate, you can safely ignore this warning.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                  
+
+ Warning_Memory_Consuming allocated:  FFT::grid 10.9863 MB
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Setup plane waves of charge/potential:                             |
+ | Use the energy cutoff and the lattice vectors to generate the      |
+ | dimensions of FFT grid. The number of FFT grid on each processor   |
+ | is 'nrxx'. The number of plane wave basis in reciprocal space is   |
+ | different for charege/potential and wave functions. We also set    |
+ | the 'sticks' for the parallel of FFT. The number of plane waves    |
+ | is 'npw' in each processor.                                        |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP THE PLANE WAVE BASIS
+ energy cutoff for charge/potential (unit:Ry) = 400
+            fft grid for charge/potential = [ 40, 40, 225 ]
+                        fft grid division = [ 1, 1, 1 ]
+        big fft grid for charge/potential = [ 40, 40, 225 ]
+                                     nbxx = 360000
+                                     nrxx = 360000
+
+ SETUP PLANE WAVES FOR CHARGE/POTENTIAL
+                    number of plane waves = 135775
+                         number of sticks = 913
+
+ PARALLEL PW FOR CHARGE/POTENTIAL
+     PROC   COLUMNS(POT)             PW
+        1            913         135775
+ --------------- sum -------------------
+        1            913         135775
+                            number of |g| = 6332
+                                  max |g| = 334.353
+                                  min |g| = 0
+
+ SETUP THE ELECTRONS NUMBER
+            electron number of element Mo = 14
+      total electron number of element Mo = 14
+             electron number of element S = 6
+       total electron number of element S = 12
+            AUTOSET number of electrons:  = 26
+ DONE : SETUP UNITCELL Time : 0.0686502 (SEC)
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Doing symmetry analysis:                                           |
+ | We calculate the norm of 3 vectors and the angles between them,    |
+ | the type of Bravais lattice is given. We can judge if the unticell |
+ | is a primitive cell. Finally we give the point group operation for |
+ | this unitcell. We use the point group operations to do symmetry |
+ | analysis on given k-point mesh and the charge density.             |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+ LATTICE VECTORS: (CARTESIAN COORDINATE: IN UNIT OF A0)
+                   +1                  +0                  +0
+                 -0.5           +0.866025                  +0
+                   +0                  +0            +6.11842
+                       right hand lattice = 1
+                                   NORM_A = 1
+                                   NORM_B = 1
+                                   NORM_C = 6.11842
+                           ALPHA (DEGREE) = 90
+                           BETA  (DEGREE) = 90
+                           GAMMA (DEGREE) = 120
+
+ The lattice vectors have been changed (STRU_SIMPLE.cif)
+
+(for optimal symmetric configuration:)
+                             BRAVAIS TYPE = 4
+                     BRAVAIS LATTICE NAME = 04. Hexagonal cell
+                                    ibrav = 4
+                                    IBRAV = 4
+                                  BRAVAIS = HEXAGONAL CELL
+                       LATTICE CONSTANT A = 1
+                                C/A RATIO = 6.11842
+Original cell was already a primitive cell.
+                        ROTATION MATRICES = 24
+              PURE POINT GROUP OPERATIONS = 6
+                   SPACE GROUP OPERATIONS = 12
+                                       C2 = 0
+                                       C3 = 2
+                                       C4 = 0
+                                       C6 = 0
+                                       S1 = 3
+                                       S3 = 0
+                                       S4 = 0
+                                       S6 = 0
+                              POINT GROUP = C_3v
+                                       C2 = 3
+                                       C3 = 2
+                                       C4 = 0
+                                       C6 = 0
+                                       S1 = 4
+                                       S3 = 2
+                                       S4 = 0
+                                       S6 = 0
+               POINT GROUP IN SPACE GROUP = D_3h
+ DONE : SYMMETRY Time : 0.0908909 (SEC)
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Setup K-points                                                     |
+ | We setup the k-points according to input parameters.               |
+ | The reduced k-points are set according to symmetry operations.     |
+ | We treat the spin as another set of k-points.                      |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP K-POINTS
+                                    nspin = 1
+                   Input type of k points = Monkhorst-Pack(Gamma)
+                                   nkstot = 64
+                       right hand lattice = 1
+(for reciprocal lattice: )
+                             BRAVAIS TYPE = 4
+                     BRAVAIS LATTICE NAME = 04. Hexagonal cell
+                                    ibrav = 4
+                       right hand lattice = 1
+(for k-lattice: )
+                             BRAVAIS TYPE = 4
+                     BRAVAIS LATTICE NAME = 04. Hexagonal cell
+                                    ibrav = 4
+                       right hand lattice = 1
+                        ROTATION MATRICES = 24
+                               nkstot_ibz = 10
+      IBZ             DirectX             DirectY             DirectZ              Weight    ibz2bz
+        1                   0                   0                   0            0.015625         0
+        2              -0.125               0.125                   0             0.09375         1
+        3               -0.25                0.25                   0             0.09375         2
+        4              -0.375               0.375                   0             0.09375         3
+        5                 0.5                 0.5                   0            0.046875         4
+        6               -0.25               0.125                   0             0.09375         9
+        7              -0.375                0.25                   0              0.1875        10
+        8                 0.5               0.375                   0              0.1875        11
+        9                 0.5                0.25                   0             0.09375        18
+       10               0.375               0.375                   0             0.09375        19
+                               nkstot now = 10
+
+  KPOINTS            DIRECT_X            DIRECT_Y            DIRECT_Z              WEIGHT
+        1                   0                   0                   0            0.015625
+        2              -0.125               0.125                   0             0.09375
+        3               -0.25                0.25                   0             0.09375
+        4              -0.375               0.375                   0             0.09375
+        5                 0.5                 0.5                   0            0.046875
+        6               -0.25               0.125                   0             0.09375
+        7              -0.375                0.25                   0              0.1875
+        8                 0.5               0.375                   0              0.1875
+        9                 0.5                0.25                   0             0.09375
+       10               0.375               0.375                   0             0.09375
+
+           k-point number in this process = 10
+       minimum distributed K point number = 10
+
+  KPOINTS         CARTESIAN_X         CARTESIAN_Y         CARTESIAN_Z              WEIGHT
+        1                   0                   0                   0             0.03125
+        2              -0.125           0.0721688                   0              0.1875
+        3               -0.25            0.144338                   0              0.1875
+        4              -0.375            0.216506                   0              0.1875
+        5                 0.5            0.866025                   0             0.09375
+        6               -0.25                   0                   0              0.1875
+        7              -0.375           0.0721688                   0               0.375
+        8                 0.5            0.721688                   0               0.375
+        9                 0.5             0.57735                   0              0.1875
+       10               0.375            0.649519                   0              0.1875
+
+  KPOINTS            DIRECT_X            DIRECT_Y            DIRECT_Z              WEIGHT
+        1                   0                   0                   0             0.03125
+        2              -0.125               0.125                   0              0.1875
+        3               -0.25                0.25                   0              0.1875
+        4              -0.375               0.375                   0              0.1875
+        5                 0.5                 0.5                   0             0.09375
+        6               -0.25               0.125                   0              0.1875
+        7              -0.375                0.25                   0               0.375
+        8                 0.5               0.375                   0               0.375
+        9                 0.5                0.25                   0              0.1875
+       10               0.375               0.375                   0              0.1875
+ DONE : INIT K-POINTS Time : 0.155956 (SEC)
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Setup plane waves of wave functions:                               |
+ | Use the energy cutoff and the lattice vectors to generate the      |
+ | dimensions of FFT grid. The number of FFT grid on each processor   |
+ | is 'nrxx'. The number of plane wave basis in reciprocal space is   |
+ | different for charege/potential and wave functions. We also set    |
+ | the 'sticks' for the parallel of FFT. The number of plane wave of  |
+ | each k-point is 'npwk[ik]' in each processor                       |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP PLANE WAVES FOR WAVE FUNCTIONS
+     energy cutoff for wavefunc (unit:Ry) = 100
+              fft grid for wave functions = [ 40, 40, 225 ]
+                    number of plane waves = 23171
+                         number of sticks = 283
+
+ PARALLEL PW FOR WAVE FUNCTIONS
+     PROC   COLUMNS(POT)             PW
+        1            283          23171
+ --------------- sum -------------------
+        1            283          23171
+ DONE : INIT PLANEWAVE Time : 0.168446 (SEC)
+
+                           occupied bands = 13
+                                   NBANDS = 23
+                                     npwx = 16995
+
+ Warning_Memory_Consuming allocated:  Psi_PW 59.6443 MB
+
+ SETUP NONLOCAL PSEUDOPOTENTIALS IN PLANE WAVE BASIS
+ Mo non-local projectors:
+ projector 1 L=0
+ projector 2 L=0
+ projector 3 L=1
+ projector 4 L=1
+ projector 5 L=2
+ projector 6 L=2
+ S non-local projectors:
+ projector 1 L=0
+ projector 2 L=0
+ projector 3 L=1
+ projector 4 L=1
+      TOTAL NUMBER OF NONLOCAL PROJECTORS = 34
+ DONE : LOCAL POTENTIAL Time : 0.20023 (SEC)
+
+
+ Init Non-Local PseudoPotential table : 
+ Init Non-Local-Pseudopotential done.
+ DONE : NON-LOCAL POTENTIAL Time : 0.226135 (SEC)
+
+
+ Make real space PAO into reciprocal space.
+       max mesh points in Pseudopotential = 601
+     dq(describe PAO in reciprocal space) = 0.01
+                                    max q = 1206
+
+ number of pseudo atomic orbitals for Mo is 0
+
+ number of pseudo atomic orbitals for S is 0
+ DONE : INIT BASIS Time : 0.226174 (SEC)
+
+
+ -------------------------------------------
+ SELF-CONSISTENT
+ -------------------------------------------
+
+ Warning_Memory_Consuming allocated:  Veff<PW>::porter 5.49316 MB
+
+ Warning_Memory_Consuming allocated:  Veff<PW>::porter1 5.49316 MB
+
+ Warning_Memory_Consuming allocated:  Meta<PW>::porter 5.49316 MB
+                                 init_chg = atomic
+ DONE : INIT SCF Time : 0.306206 (SEC)
+
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   1--------------------------------
+
+ Warning_Memory_Consuming allocated:  DiagSub::hpsi 5.96443 MB
+
+ Warning_Memory_Consuming allocated:  DiagSub::evctemp 5.92021 MB
+
+ Warning_Memory_Consuming allocated:  DiagSub::evctemp 5.92969 MB
+
+ Warning_Memory_Consuming allocated:  DiagSub::evctemp 5.94794 MB
+
+ Warning_Memory_Consuming allocated:  DiagSub::evctemp 5.96057 MB
+
+ Warning_Memory_Consuming allocated:  DiagSub::evctemp 5.96408 MB
+
+ Warning_Memory_Consuming allocated:  DiagSub::evctemp 5.96443 MB
+Average iterative diagonalization steps: 10.4 ; where current threshold is: 0.01 . 
+
+ Warning_Memory_Consuming allocated:  ElecSPW::wfcr 5.49316 MB
+
+ Warning_Memory_Consuming allocated:  ElecSPW::wfcr_a 5.49316 MB
+ Notice: Threshold on eigenvalues was too large.
+ hsover_error=0.26 > DRHO=0.128786
+ Origin diag_ethr = 0.01
+ New    diag_ethr = 0.000495329
+Average iterative diagonalization steps: 7.4087 ; where current threshold is: 0.000495329 . 
+
+ Warning_Memory_Consuming allocated:  ChgMix::Rrho 54.9316 MB
+
+ Warning_Memory_Consuming allocated:  ChgMix::dRrho 52.1851 MB
+
+ Warning_Memory_Consuming allocated:  ChgMix::drho 52.1851 MB
+
+ Density error is 0.110538734079
+                          Error Threshold = 0.000495328935801
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.289134723                -2425.74812372
+         E_Harris                -178.302165326                -2425.92541417
+          E_Fermi               -0.036563723599               -0.497474981043
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   2--------------------------------
+Average iterative diagonalization steps: 2.00869565217 ; where current threshold is: 0.000425148977226 . 
+
+ Density error is 0.0704870163402
+                          Error Threshold = 0.000425148977226
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.271257971                -2425.50489803
+         E_Harris                -178.163238363                -2424.03521587
+          E_Fermi               -0.041931666171               -0.570509586559
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   3--------------------------------
+Average iterative diagonalization steps: 2.63043478261 ; where current threshold is: 0.000271103909001 . 
+
+ Density error is 0.0325023918646
+                          Error Threshold = 0.000271103909001
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                 -178.27404443                -2425.54280976
+         E_Harris                -176.002418034                -2394.63574704
+          E_Fermi              -0.0415475693235                -0.56528368085
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   4--------------------------------
+Average iterative diagonalization steps: 2.2652173913 ; where current threshold is: 0.000125009199479 . 
+
+ Density error is 0.00720716400197
+                          Error Threshold = 0.000125009199479
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.274438948                -2425.54817745
+         E_Harris                -173.819681624                -2364.93809463
+          E_Fermi              -0.0366191219194               -0.498228713861
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   5--------------------------------
+Average iterative diagonalization steps: 3.50434782609 ; where current threshold is: 2.7719861546e-05 . 
+
+ Density error is 0.00535708373325
+                          Error Threshold = 2.7719861546e-05
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.273731906                -2425.53855765
+         E_Harris                -175.934134601                -2393.70670327
+          E_Fermi              -0.0223340562429               -0.303870424355
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   6--------------------------------
+Average iterative diagonalization steps: 3.32173913043 ; where current threshold is: 2.06041682048e-05 . 
+
+ Density error is 0.0126010444755
+                          Error Threshold = 2.06041682048e-05
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.274159522                -2425.54437567
+         E_Harris                -178.520838845                -2428.90062003
+          E_Fermi              -0.0259880594348               -0.353585688276
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   7--------------------------------
+Average iterative diagonalization steps: 2.30869565217 ; where current threshold is: 2.06041682048e-05 . 
+
+ Density error is 0.000624964037712
+                          Error Threshold = 2.06041682048e-05
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275475342                -2425.56227831
+         E_Harris                -175.216285105                -2383.93985982
+          E_Fermi              -0.0196681724459               -0.267599214511
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   8--------------------------------
+Average iterative diagonalization steps: 2.92608695652 ; where current threshold is: 2.40370783736e-06 . 
+
+ Density error is 0.000587396920229
+                          Error Threshold = 2.40370783736e-06
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275400535                -2425.56126051
+         E_Harris                -177.583933995                -2416.15337559
+          E_Fermi              -0.0195791856981               -0.266388487695
+
+ PW ALGORITHM --------------- ION=   1  ELEC=   9--------------------------------
+Average iterative diagonalization steps: 2.6347826087 ; where current threshold is: 2.25921892396e-06 . 
+
+ Density error is 0.000397544606426
+                          Error Threshold = 2.25921892396e-06
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275358232                -2425.56068494
+         E_Harris                -177.658205238                -2417.16388769
+          E_Fermi              -0.0192436440961               -0.261823209991
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  10--------------------------------
+Average iterative diagonalization steps: 3.01739130435 ; where current threshold is: 1.52901771702e-06 . 
+
+ Density error is 0.000276182740982
+                          Error Threshold = 1.52901771702e-06
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275364599                -2425.56077158
+         E_Harris                -177.559681825                -2415.82340788
+          E_Fermi              -0.0152980194374               -0.208140232463
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  11--------------------------------
+Average iterative diagonalization steps: 2.04347826087 ; where current threshold is: 1.06224131147e-06 . 
+
+ Density error is 0.000265471810052
+                          Error Threshold = 1.06224131147e-06
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275319092                -2425.56015242
+         E_Harris                -177.728843468                -2418.12497011
+          E_Fermi              -0.0146901278657               -0.199869443322
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  12--------------------------------
+Average iterative diagonalization steps: 3.08695652174 ; where current threshold is: 1.02104542328e-06 . 
+
+ Density error is 0.000157740413683
+                          Error Threshold = 1.02104542328e-06
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275316404                -2425.56011585
+         E_Harris                -177.847688471                -2419.74193934
+          E_Fermi              -0.0116395661904               -0.158364422437
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  13--------------------------------
+Average iterative diagonalization steps: 2.37826086957 ; where current threshold is: 6.0669389878e-07 . 
+
+ Density error is 0.000147421308099
+                          Error Threshold = 6.0669389878e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275318939                -2425.56015034
+         E_Harris                -177.809983952                -2419.22894303
+          E_Fermi              -0.0111362481003               -0.151516428506
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  14--------------------------------
+Average iterative diagonalization steps: 2.01304347826 ; where current threshold is: 5.67005031149e-07 . 
+
+ Density error is 0.000151151613183
+                          Error Threshold = 5.67005031149e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275318867                -2425.56014935
+         E_Harris                -177.779388923                -2418.81267631
+          E_Fermi              -0.0112143066354               -0.152578469361
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  15--------------------------------
+Average iterative diagonalization steps: 2 ; where current threshold is: 5.67005031149e-07 . 
+
+ Density error is 0.00014618818399
+                          Error Threshold = 5.67005031149e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275307737                -2425.55999793
+         E_Harris                -177.774906879                -2418.75169498
+          E_Fermi              -0.0110015145664               -0.149683284734
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  16--------------------------------
+Average iterative diagonalization steps: 2.7 ; where current threshold is: 5.62262246115e-07 . 
+
+ Density error is 0.000110855241888
+                          Error Threshold = 5.62262246115e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275305354                 -2425.5599655
+         E_Harris                -177.836962727                 -2419.5960081
+          E_Fermi             -0.00881169065135               -0.119889201872
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  17--------------------------------
+Average iterative diagonalization steps: 2.42173913043 ; where current threshold is: 4.26366314952e-07 . 
+
+ Density error is 8.61192004221e-05
+                          Error Threshold = 4.26366314952e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275307337                -2425.55999249
+         E_Harris                -177.874150774                -2420.10197744
+          E_Fermi             -0.00746222530284               -0.101528783878
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  18--------------------------------
+Average iterative diagonalization steps: 2.03043478261 ; where current threshold is: 3.31227693931e-07 . 
+
+ Density error is 9.4924613101e-05
+                          Error Threshold = 3.31227693931e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275311265                -2425.56004593
+         E_Harris                -177.893005207                -2420.35850516
+          E_Fermi             -0.00790825664288               -0.107597351589
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  19--------------------------------
+Average iterative diagonalization steps: 2.8652173913 ; where current threshold is: 3.31227693931e-07 . 
+
+ Density error is 5.00587796769e-05
+                          Error Threshold = 3.31227693931e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275313677                -2425.56007874
+         E_Harris                -177.953593913                -2421.18285679
+          E_Fermi             -0.00498251147747              -0.0677905464439
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  20--------------------------------
+Average iterative diagonalization steps: 2.41739130435 ; where current threshold is: 1.92533767988e-07 . 
+
+ Density error is 4.33060410765e-05
+                          Error Threshold = 1.92533767988e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275313661                -2425.56007853
+         E_Harris                -178.043594793                -2422.40738159
+          E_Fermi             -0.00433410540868              -0.0589685292907
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  21--------------------------------
+Average iterative diagonalization steps: 2.00434782609 ; where current threshold is: 1.66561696448e-07 . 
+
+ Density error is 4.37292452146e-05
+                          Error Threshold = 1.66561696448e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275319568                -2425.56015889
+         E_Harris                -178.053705019                -2422.54493827
+          E_Fermi             -0.00441125010141              -0.0600181366822
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  22--------------------------------
+Average iterative diagonalization steps: 2.47826086957 ; where current threshold is: 1.66561696448e-07 . 
+
+ Density error is 3.02189419748e-05
+                          Error Threshold = 1.66561696448e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275323342                -2425.56021025
+         E_Harris                -178.078411583                -2422.88108832
+          E_Fermi             -0.00315112028734              -0.0428731909913
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  23--------------------------------
+Average iterative diagonalization steps: 2.48695652174 ; where current threshold is: 1.16226699903e-07 . 
+
+ Density error is 2.5713590998e-05
+                          Error Threshold = 1.16226699903e-07
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275326186                -2425.56024894
+         E_Harris                -178.076871768                -2422.86013806
+          E_Fermi             -0.00253090561914              -0.0344347375206
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  24--------------------------------
+Average iterative diagonalization steps: 2.37826086957 ; where current threshold is: 9.88984269154e-08 . 
+
+ Density error is 2.02080515215e-05
+                          Error Threshold = 9.88984269154e-08
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275341721                 -2425.5604603
+         E_Harris                -178.087252682                -2423.00137764
+          E_Fermi             -0.00179064427629              -0.0243629652487
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  25--------------------------------
+Average iterative diagonalization steps: 3.74782608696 ; where current threshold is: 7.77232750826e-08 . 
+
+ Density error is 6.30172056442e-06
+                          Error Threshold = 7.77232750826e-08
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275341583                -2425.56045842
+         E_Harris                -178.155145672                -2423.92510916
+          E_Fermi            +0.000704980994753             +0.00959175851034
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  26--------------------------------
+Average iterative diagonalization steps: 2.54782608696 ; where current threshold is: 2.42373867862e-08 . 
+
+ Density error is 6.86083065425e-06
+                          Error Threshold = 2.42373867862e-08
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275341759                -2425.56046082
+         E_Harris                -178.170149441                -2424.12924591
+          E_Fermi              +0.0006525199814             +0.00887798980589
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  27--------------------------------
+Average iterative diagonalization steps: 2.14782608696 ; where current threshold is: 2.42373867862e-08 . 
+
+ Density error is 7.77677676346e-06
+                          Error Threshold = 2.42373867862e-08
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275338276                -2425.56041343
+         E_Harris                -178.165993869                -2424.07270645
+          E_Fermi            +0.000612341227186             +0.00833132981004
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  28--------------------------------
+Average iterative diagonalization steps: 3.33913043478 ; where current threshold is: 2.42373867862e-08 . 
+
+ Density error is 6.17446761137e-06
+                          Error Threshold = 2.42373867862e-08
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275352807                -2425.56061114
+         E_Harris                -178.152986166                -2423.89572757
+          E_Fermi             +0.00032293790952             +0.00439379566968
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  29--------------------------------
+Average iterative diagonalization steps: 4.53043478261 ; where current threshold is: 2.37479523514e-08 . 
+
+ Density error is 1.37794094727e-07
+                          Error Threshold = 2.37479523514e-08
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275353616                -2425.56062214
+         E_Harris                -178.241788825                -2425.10394973
+          E_Fermi             +0.00283496502277              +0.0385716779404
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  30--------------------------------
+Average iterative diagonalization steps: 5.8347826087 ; where current threshold is: 5.29977287411e-10 . 
+
+ Density error is 9.04888306668e-08
+                          Error Threshold = 5.29977287411e-10
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275353879                -2425.56062572
+         E_Harris                -178.271649601                -2425.51022644
+          E_Fermi             +0.00290417672738              +0.0395133514914
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  31--------------------------------
+Average iterative diagonalization steps: 4.90869565217 ; where current threshold is: 3.48033964103e-10 . 
+
+ Density error is 5.06413275328e-08
+                          Error Threshold = 3.48033964103e-10
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275353192                -2425.56061637
+         E_Harris                -178.269698325                -2425.48367796
+          E_Fermi              +0.0029912365052              +0.0406978605364
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  32--------------------------------
+Average iterative diagonalization steps: 5.92608695652 ; where current threshold is: 1.94774336664e-10 . 
+
+ Density error is 2.08799283622e-07
+                          Error Threshold = 1.94774336664e-10
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275353893                -2425.56062591
+         E_Harris                 -178.26521686                 -2425.4227045
+          E_Fermi             +0.00276826783012              +0.0376642160797
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  33--------------------------------
+Average iterative diagonalization steps: 5.90434782609 ; where current threshold is: 1.94774336664e-10 . 
+
+ Density error is 4.23464899762e-08
+                          Error Threshold = 1.94774336664e-10
+
+       Energy                       Rydberg                            eV
+       E_KohnSham                -178.275354257                -2425.56063087
+         E_Harris                -178.265137584                 -2425.4216259
+          E_Fermi             +0.00294799560879              +0.0401095379585
+
+ PW ALGORITHM --------------- ION=   1  ELEC=  34--------------------------------
+Average iterative diagonalization steps: 5.21739130435 ; where current threshold is: 1.62871115293e-10 . 
+
+ Density error is 9.66009287872e-09
+                          Error Threshold = 1.62871115293e-10
+
+           Energy                       Rydberg                            eV
+       E_KohnSham                -178.275354547                -2425.56063481
+   E_KS(sigma->0)                -178.275354547                -2425.56063481
+         E_Harris                -178.273512057                -2425.53556645
+           E_band                -30.5216800078                -415.268760639
+       E_one_elec                -1024.85715683                 -13943.896969
+        E_Hartree                +513.161971149                +6981.92680454
+             E_xc                -24.5501703278                -334.022203328
+          E_Ewald                +357.970001466                  +4870.431733
+   E_entropy(-TS)                            +0                            +0
+          E_descf                            +0                            +0
+            E_exx                            +0                            +0
+          E_Fermi             +0.00303708092504              +0.0413216058676
+
+ charge density convergence is achieved
+ final etot is -2425.5606348 eV
+ EFERMI = 0.041321605868 eV
+
+ STATE ENERGY(eV) AND OCCUPATIONS    NSPIN == 1
+ 1/10 kpoint (Cartesian) = 0.0000 0.0000 0.0000 (16869 pws)
+       1       -60.7787      0.0312500
+       2       -34.9511      0.0312500
+       3       -34.5409      0.0312500
+       4       -34.5409      0.0312500
+       5       -13.9644      0.0312500
+       6       -13.1851      0.0312500
+       7       -5.47330      0.0312500
+       8       -2.57589      0.0312500
+       9       -1.34382      0.0312500
+      10       -1.34382      0.0312500
+      11       -1.07173      0.0312500
+      12      -0.190716      0.0312500
+      13      -0.190716      0.0312500
+      14        2.90855        0.00000
+      15        2.90855        0.00000
+      16        3.12459        0.00000
+      17        3.12459        0.00000
+      18        5.09533        0.00000
+      19        5.42201        0.00000
+      20        6.08833        0.00000
+      21        7.19667        0.00000
+      22        7.68031        0.00000
+      23        9.08645        0.00000
+
+ 2/10 kpoint (Cartesian) = -0.12500 0.072169 0.0000 (16896 pws)
+       1       -60.7694       0.187500
+       2       -34.9363       0.187500
+       3       -34.6204       0.187500
+       4       -34.5592       0.187500
+       5       -13.7044       0.187500
+       6       -13.0168       0.187500
+       7       -5.14000       0.187500
+       8       -2.79210       0.187500
+       9       -1.94837       0.187500
+      10       -1.06980       0.187500
+      11      -0.983719       0.187500
+      12      -0.581473       0.187500
+      13      -0.578379       0.187500
+      14        2.08463        0.00000
+      15        2.67227        0.00000
+      16        2.74564        0.00000
+      17        3.36555        0.00000
+      18        5.47413        0.00000
+      19        5.77672        0.00000
+      20        6.47359        0.00000
+      21        7.81528        0.00000
+      22        8.01600        0.00000
+      23        9.57559        0.00000
+
+ 3/10 kpoint (Cartesian) = -0.25000 0.14434 0.0000 (16948 pws)
+       1       -60.7470       0.187500
+       2       -34.9003       0.187500
+       3       -34.8088       0.187500
+       4       -34.6029       0.187500
+       5       -12.9948       0.187500
+       6       -12.5596       0.187500
+       7       -4.47159       0.187500
+       8       -3.44079       0.187500
+       9       -3.19380       0.187500
+      10       -1.65145       0.187500
+      11       -1.30149       0.187500
+      12       -1.07850       0.187500
+      13      -0.455784       0.187500
+      14        1.45947        0.00000
+      15        2.37661        0.00000
+      16        2.79795        0.00000
+      17        3.67736        0.00000
+      18        6.35016        0.00000
+      19        6.73773        0.00000
+      20        7.29113        0.00000
+      21        8.12834        0.00000
+      22        8.82211        0.00000
+      23        9.39657        0.00000
+
+ 4/10 kpoint (Cartesian) = -0.37500 0.21651 0.0000 (16984 pws)
+       1       -60.7246       0.187500
+       2       -34.9926       0.187500
+       3       -34.8642       0.187500
+       4       -34.6463       0.187500
+       5       -12.0905       0.187500
+       6       -11.9953       0.187500
+       7       -5.03300       0.187500
+       8       -4.48071       0.187500
+       9       -3.67138       0.187500
+      10       -2.32848       0.187500
+      11       -1.85784       0.187500
+      12       -1.06521       0.187500
+      13     -0.0788089       0.187500
+      14        2.13497        0.00000
+      15        2.65496        0.00000
+      16        3.23854        0.00000
+      17        3.78744        0.00000
+      18        6.81023        0.00000
+      19        7.69958        0.00000
+      20        7.75319        0.00000
+      21        8.52687        0.00000
+      22        8.79692        0.00000
+      23        9.53981        0.00000
+
+ 5/10 kpoint (Cartesian) = 0.50000 0.86603 0.0000 (16994 pws)
+       1       -60.7152      0.0937500
+       2       -35.0674      0.0937500
+       3       -34.8491      0.0937500
+       4       -34.6642      0.0937500
+       5       -11.7113      0.0937500
+       6       -11.6063      0.0937500
+       7       -5.68710      0.0937500
+       8       -5.02592      0.0937500
+       9       -3.76351      0.0937500
+      10       -2.49101      0.0937500
+      11       -2.05908      0.0937500
+      12      -0.765098      0.0937500
+      13     -0.0333537      0.0937500
+      14        2.75606        0.00000
+      15        3.01379        0.00000
+      16        3.43558        0.00000
+      17        3.79881        0.00000
+      18        6.34039        0.00000
+      19        7.86923        0.00000
+      20        7.89147        0.00000
+      21        8.62313        0.00000
+      22        9.44189        0.00000
+      23        10.0572        0.00000
+
+ 6/10 kpoint (Cartesian) = -0.25000 0.0000 0.0000 (16949 pws)
+       1       -60.7536       0.187500
+       2       -34.9109       0.187500
+       3       -34.7453       0.187500
+       4       -34.5992       0.187500
+       5       -13.2181       0.187500
+       6       -12.7023       0.187500
+       7       -4.59376       0.187500
+       8       -3.11720       0.187500
+       9       -2.81983       0.187500
+      10       -1.81055       0.187500
+      11       -1.05636       0.187500
+      12      -0.720627       0.187500
+      13      -0.648655       0.187500
+      14        1.39472        0.00000
+      15        2.39771        0.00000
+      16        2.57657        0.00000
+      17        3.62516        0.00000
+      18        6.11226        0.00000
+      19        6.44414        0.00000
+      20        7.10168        0.00000
+      21        8.25065        0.00000
+      22        8.64005        0.00000
+      23        9.91407        0.00000
+
+ 7/10 kpoint (Cartesian) = -0.37500 0.072169 0.0000 (16969 pws)
+       1       -60.7312       0.375000
+       2       -34.9118       0.375000
+       3       -34.8748       0.375000
+       4       -34.6623       0.375000
+       5       -12.3944       0.375000
+       6       -12.1757       0.375000
+       7       -4.42091       0.375000
+       8       -3.84261       0.375000
+       9       -3.51701       0.375000
+      10       -2.81621       0.375000
+      11       -1.51245       0.375000
+      12       -1.36704       0.375000
+      13      -0.314618       0.375000
+      14        1.34968        0.00000
+      15        2.80162        0.00000
+      16        2.80963        0.00000
+      17        3.77551        0.00000
+      18        7.12321        0.00000
+      19        7.60105        0.00000
+      20        7.71772        0.00000
+      21        8.50441        0.00000
+      22        9.35892        0.00000
+      23        9.84671        0.00000
+
+ 8/10 kpoint (Cartesian) = 0.50000 0.72169 0.0000 (16985 pws)
+       1       -60.7152       0.375000
+       2       -35.0265       0.375000
+       3       -34.8492       0.375000
+       4       -34.7074       0.375000
+       5       -11.7121       0.375000
+       6       -11.6381       0.375000
+       7       -5.29650       0.375000
+       8       -4.81519       0.375000
+       9       -3.58935       0.375000
+      10       -2.77759       0.375000
+      11       -2.09791       0.375000
+      12       -1.54897       0.375000
+      13      -0.160502       0.375000
+      14        2.26510        0.00000
+      15        3.02913        0.00000
+      16        3.23621        0.00000
+      17        3.86930        0.00000
+      18        6.73771        0.00000
+      19        8.35414        0.00000
+      20        8.56322        0.00000
+      21        9.37865        0.00000
+      22        9.84935        0.00000
+      23        10.0763        0.00000
+
+ 9/10 kpoint (Cartesian) = 0.50000 0.57735 0.0000 (16995 pws)
+       1       -60.7152       0.187500
+       2       -34.9694       0.187500
+       3       -34.8492       0.187500
+       4       -34.7669       0.187500
+       5       -11.7129       0.187500
+       6       -11.6690       0.187500
+       7       -4.75169       0.187500
+       8       -4.48346       0.187500
+       9       -3.31080       0.187500
+      10       -3.27426       0.187500
+      11       -2.58039       0.187500
+      12       -1.95777       0.187500
+      13      -0.225825       0.187500
+      14        1.79629        0.00000
+      15        2.45779        0.00000
+      16        3.41976        0.00000
+      17        4.19901        0.00000
+      18        7.28340        0.00000
+      19        8.48001        0.00000
+      20        8.74843        0.00000
+      21        9.49406        0.00000
+      22        9.95060        0.00000
+      23        10.0593        0.00000
+
+ 10/10 kpoint (Cartesian) = 0.37500 0.64952 0.0000 (16973 pws)
+       1       -60.7086       0.187500
+       2       -34.9740       0.187500
+       3       -34.8386       0.187500
+       4       -34.8295       0.187500
+       5       -11.4862       0.187500
+       6       -11.3115       0.187500
+       7       -4.92558       0.187500
+       8       -4.84353       0.187500
+       9       -3.51437       0.187500
+      10       -3.07985       0.187500
+      11       -2.90614       0.187500
+      12       -2.49534       0.187500
+      13      0.0413216       0.187500
+      14        2.24406        0.00000
+      15        2.42769        0.00000
+      16        3.16020        0.00000
+      17        4.51372        0.00000
+      18        7.09065        0.00000
+      19        8.35054        0.00000
+      20        9.35520        0.00000
+      21        9.81506        0.00000
+      22        10.0793        0.00000
+      23        10.6193        0.00000
+
+
+
+ --------------------------------------------
+ !FINAL_ETOT_IS -2425.560634810105 eV
+ --------------------------------------------
+
+
+
+
+
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                                      total         130.86        17       7.7   1.0e+02%
+                 Driver         driver_line         130.85         1   1.3e+02    1.e+02%
+                   Ions            opt_ions         130.62         1   1.3e+02    1.e+02%
+          ESolver_KS_PW                 Run         130.62         1   1.3e+02    1.e+02%
+               PW_Basis          recip2real        0.47516       247    0.0019      0.36%
+              Potential  update_from_charge         1.3224        35     0.038       1.0%
+              Potential           cal_v_eff         1.3176        35     0.038       1.0%
+           H_Hartree_pw           v_hartree        0.19809        35    0.0057      0.15%
+               PW_Basis          real2recip        0.63314       350    0.0018      0.48%
+                  PotXC           cal_v_eff         1.0786        35     0.031      0.82%
+          XC_Functional                v_xc         1.0608        35     0.030      0.81%
+               Symmetry       rhog_symmetry        0.33430        36    0.0093      0.26%
+              HSolverPW               solve         127.85        35       3.7       98.%
+               Nonlocal              getvnl        0.57623       350    0.0016      0.44%
+            pp_cell_vnl              getvnl        0.57591       350    0.0016      0.44%
+        DiagoIterAssist      diagH_subspace         20.705       340     0.061       16.%
+             OperatorPW                hPsi         97.057     27897    0.0035       74.%
+               Operator          EkineticPW         1.0401     27897   3.7e-05      0.79%
+               Operator              VeffPW         88.030     27897    0.0032       67.%
+             PW_Basis_K          recip2real         56.443     39927    0.0014       43.%
+             PW_Basis_K    gathers_scatterp         8.4153     39927   0.00021       6.4%
+             PW_Basis_K          real2recip         35.848     35377    0.0010       27.%
+             PW_Basis_K    gatherp_scatters         4.8629     35377   0.00014       3.7%
+               Operator          NonlocalPW         6.2963     27897   0.00023       4.8%
+               Nonlocal     add_nonlocal_pp         3.5285     27897   0.00013       2.7%
+        DiagoIterAssist     LAPACK_subspace        0.14108       340   0.00041      0.11%
+                DiagoCG           diag_once         99.055       350      0.28       76.%
+            ElecStatePW            psiToRho         6.9439        35      0.20       5.3%
+                 Charge             mix_rho        0.54930        33     0.017      0.42%
+                 Charge        Pulay_mixing        0.54073        33     0.016      0.41%
+ ----------------------------------------------------------------------------------------
+
+ NAME---------------|MEMORY(MB)--------
+               total          307.9
+              Psi_PW          59.64
+        ChgMix::Rrho          54.93
+       ChgMix::dRrho          52.19
+        ChgMix::drho          52.19
+           FFT::grid          10.99
+       DiagSub::hpsi          5.964
+    DiagSub::evctemp          5.964
+    Veff<PW>::porter          5.493
+   Veff<PW>::porter1          5.493
+    Meta<PW>::porter          5.493
+       ElecSPW::wfcr          5.493
+     ElecSPW::wfcr_a          5.493
+            VNL::vkb          4.408
+        SF::strucFac          4.144
+        PW_B_K::gcar          3.890
+            Chg::rho          2.747
+       Chg::rho_save          2.747
+       Chg::rho_core          2.747
+       Pot::veff_fix          2.747
+           Pot::veff          2.747
+   ChgMix::rho_save2          2.747
+           VNL::vkb1          2.334
+         PW_B_K::gk2          1.297
+            VNL::ylm          1.167
+   YlmReal::Ylm_Real          1.167
+           Chg::rhog          1.036
+      Chg::rhog_save          1.036
+      Chg::rhog_core          1.036
+ -------------   < 1.0 MB has been ignored ----------------
+ ----------------------------------------------------------
+
+ Start  Time  : Sun Dec  3 13:59:45 2023
+ Finish Time  : Sun Dec  3 14:01:56 2023
+ Total  Time  : 0 h 2 mins 11 secs 

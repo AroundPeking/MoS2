@@ -1,0 +1,8 @@
+ smearing_decision  warning : Fixed occupations,gauss broadening ignored
+ AUTO_SET gaussian_parameter to 0
+ In SCAN_BEGIN, can't find: LATTICE_VECTORS block.
+ In SCAN_BEGIN, can't find: <PP_MESH block.
+ In SCAN_BEGIN, can't find: <PP_MESH block.
+ AUTO_SET NBANDS to 23
+                 charge before normalized = 25.9999971428388
+                  charge after normalized = 26.0000000000001

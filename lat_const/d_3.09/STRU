@@ -1,0 +1,24 @@
+#This is the atom file containing all the information
+#about the lattice structure.
+
+ATOMIC_SPECIES
+ Mo  95.94    Mo_ONCV_PBE-1.0.upf
+ S   32.066    S_ONCV_PBE-1.0.upf
+
+LATTICE_CONSTANT
+5.839253846  #1.889726164
+
+LATTICE_PARAMETERS
+6.47249190  #c/a
+
+ATOMIC_POSITIONS
+Direct	 		#Cartesian(Unit is LATTICE_CONSTANT)
+Mo 			#Name of element	
+0.0			#Magnetic for this element.
+1			#Number of atoms
+0.66666667  0.33333333  0.1 0 0 0
+S
+0.0
+2
+0.000000000  0.000000000  0.0 0 0 0
+0.000000000  0.000000000  0.2 0 0 0

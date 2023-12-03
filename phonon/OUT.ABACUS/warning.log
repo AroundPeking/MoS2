@@ -1,0 +1,97 @@
+ smearing_decision  warning : Fixed occupations,gauss broadening ignored
+ AUTO_SET gaussian_parameter to 0
+ In SCAN_BEGIN, can't find: LATTICE_PARAMETERS block.
+ In SCAN_BEGIN, can't find: <PP_MESH block.
+ In SCAN_BEGIN, can't find: <PP_MESH block.
+ AUTO_SET NBANDS to 0
+ AUTO_SET NBANDS to 125
+      Processor           Atom
+              1             23
+                            startmag_type = 2
+                       charge from rho_at = 13.9093
+                         charge should be = 14
+                            startmag_type = 2
+                       charge from rho_at = 5.98967
+                         charge should be = 6
+ Warning: negative or imaginary starting charge :  neg = -0.00166042 ima = 7.7096e-14 SPIN = 0
+
+ SETUP ATOMIC RHO FOR SPIN 1
+                 Electron number from rho = 208
+           total electron number from rho = 208
+                                should be = 208
+                 charge before normalized = 208
+                  charge after normalized = 208
+                 charge before normalized = 208.019124067545
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.018618346091
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.016692305848
+                  charge after normalized = 207.999999999998
+                 charge before normalized = 208.015639469848
+                  charge after normalized = 208
+                 charge before normalized = 208.015472684646
+                  charge after normalized = 208
+                 charge before normalized = 208.015737082981
+                  charge after normalized = 208
+                 charge before normalized = 208.015778593448
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.015723901833
+                  charge after normalized = 208
+                 charge before normalized = 208.015729962371
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.01570655922
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.015694459453
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.015689762178
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015683400664
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.015675166759
+                  charge after normalized = 208.000000000002
+                 charge before normalized = 208.015674245113
+                  charge after normalized = 208
+                 charge before normalized = 208.015669951423
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.01566399719
+                  charge after normalized = 208
+                 charge before normalized = 208.015660738886
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015659694962
+                  charge after normalized = 207.999999999998
+                 charge before normalized = 208.015654075301
+                  charge after normalized = 208.000000000002
+                 charge before normalized = 208.015652199677
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015650633867
+                  charge after normalized = 208.000000000002
+                 charge before normalized = 208.015650753192
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.01565057664
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015650680882
+                  charge after normalized = 207.999999999999
+                 charge before normalized = 208.01565057359
+                  charge after normalized = 208
+                 charge before normalized = 208.015650539903
+                  charge after normalized = 208
+                 charge before normalized = 208.015650547863
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015650551896
+                  charge after normalized = 208.000000000002
+                 charge before normalized = 208.015650554158
+                  charge after normalized = 208.000000000002
+                 charge before normalized = 208.015650553436
+                  charge after normalized = 207.999999999998
+                 charge before normalized = 208.015650553665
+                  charge after normalized = 208
+                 charge before normalized = 208.015650553879
+                  charge after normalized = 208
+                 charge before normalized = 208.015650553772
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015650553766
+                  charge after normalized = 208
+                 charge before normalized = 208.01565055392
+                  charge after normalized = 208.000000000001
+                 charge before normalized = 208.015650553919
+                  charge after normalized = 208.000000000002

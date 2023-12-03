@@ -1,0 +1,7 @@
+{
+	"bandfile" : "BANDS_1.dat",
+	"efermi": 0.0457587036966,
+	"energy_range" : [-5, 5],
+	"figsize" : [14, 10],
+	"kptfile" : "KPT"
+}

@@ -1,0 +1,114 @@
+                                                                                     
+                              ABACUS v3.3.2
+
+               Atomic-orbital Based Ab-initio Computation at UStc                    
+
+                     Website: http://abacus.ustc.edu.cn/                             
+               Documentation: https://abacus.deepmodeling.com/                       
+                  Repository: https://github.com/abacusmodeling/abacus-develop       
+                              https://github.com/deepmodeling/abacus-develop         
+                      Commit: e39b50e (Fri Aug 18 16:14:25 2023 +0800)
+
+ Sat Dec  2 14:24:40 2023
+ MAKE THE DIR         : OUT.ABACUS/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Warning: the number of valence electrons in pseudopotential > 6 for Mo: [Kr] 4d5 5s1
+ Pseudopotentials with additional electrons can yield (more) accurate outcomes, but may be less efficient.
+ If you're confident that your chosen pseudopotential is appropriate, you can safely ignore this warning.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ UNIFORM GRID DIM     : 27 * 27 * 160
+ UNIFORM GRID DIM(BIG): 27 * 27 * 160
+ DONE(0.0960005  SEC) : SETUP UNITCELL
+ DONE(0.118299   SEC) : SYMMETRY
+ DONE(0.183081   SEC) : INIT K-POINTS
+ ---------------------------------------------------------
+ Self-consistent calculations for electrons
+ ---------------------------------------------------------
+ SPIN    KPOINTS         PROCESSORS  
+ 1       5               1           
+ ---------------------------------------------------------
+ Use plane wave basis
+ ---------------------------------------------------------
+ ELEMENT NATOM       XC          
+ Mo      1           
+ S       2           
+ ---------------------------------------------------------
+ Initial plane wave basis and FFT box
+ ---------------------------------------------------------
+ DONE(0.186503   SEC) : INIT PLANEWAVE
+ MEMORY FOR PSI (MB)  : 11.4445
+ DONE(0.209885   SEC) : LOCAL POTENTIAL
+ DONE(0.228588   SEC) : NON-LOCAL POTENTIAL
+ DONE(0.22868    SEC) : INIT BASIS
+ -------------------------------------------
+ SELF-CONSISTENT : 
+ -------------------------------------------
+ START CHARGE      : atomic
+ DONE(0.273071   SEC) : INIT SCF
+ ITER   ETOT(eV)       EDIFF(eV)      DRHO       TIME(s)    
+ CG1    -2.423868e+03  0.000000e+00   2.841e-01  2.674e+00  
+ CG2    -2.425214e+03  -1.346283e+00  6.033e-02  6.467e-01  
+ CG3    -2.425147e+03  6.713765e-02   3.614e-02  5.410e-01  
+ CG4    -2.425193e+03  -4.598126e-02  1.466e-02  6.156e-01  
+ CG5    -2.425208e+03  -1.492610e-02  2.142e-03  4.756e-01  
+ CG6    -2.425172e+03  3.616839e-02   8.714e-03  7.681e-01  
+ CG7    -2.425185e+03  -1.255258e-02  1.725e-02  8.007e-01  
+ CG8    -2.425210e+03  -2.496377e-02  5.583e-04  5.931e-01  
+ CG9    -2.425210e+03  8.027189e-06   5.713e-04  4.635e-01  
+ CG10   -2.425208e+03  1.614701e-03   6.805e-04  5.119e-01  
+ CG11   -2.425208e+03  -5.451518e-04  1.998e-04  5.534e-01  
+ CG12   -2.425208e+03  3.453919e-04   1.740e-04  5.207e-01  
+ CG13   -2.425208e+03  4.497296e-05   1.192e-04  6.076e-01  
+ CG14   -2.425208e+03  1.068392e-05   9.651e-05  5.009e-01  
+ CG15   -2.425208e+03  -9.457086e-06  8.081e-05  4.822e-01  
+ CG16   -2.425208e+03  -2.186249e-05  6.199e-05  5.162e-01  
+ CG17   -2.425208e+03  -4.913940e-05  5.461e-05  4.629e-01  
+ CG18   -2.425208e+03  -5.802355e-05  4.679e-05  4.768e-01  
+ CG19   -2.425208e+03  -1.275339e-05  2.792e-05  5.003e-01  
+ CG20   -2.425208e+03  8.858722e-07   2.758e-05  3.888e-01  
+ CG21   -2.425208e+03  -3.632572e-05  2.965e-05  4.475e-01  
+ CG22   -2.425208e+03  -2.421259e-04  2.755e-05  4.357e-01  
+ CG23   -2.425209e+03  -2.787735e-05  8.182e-06  6.188e-01  
+ CG24   -2.425208e+03  2.954478e-05   6.751e-06  4.922e-01  
+ CG25   -2.425208e+03  -5.697539e-06  7.418e-06  4.881e-01  
+ CG26   -2.425209e+03  -5.925102e-05  6.939e-06  5.320e-01  
+ CG27   -2.425209e+03  -5.195562e-05  4.032e-06  5.603e-01  
+ CG28   -2.425209e+03  -8.881233e-05  2.654e-06  6.355e-01  
+ CG29   -2.425209e+03  -4.042207e-05  5.919e-07  7.365e-01  
+ CG30   -2.425209e+03  -1.456368e-05  1.167e-07  8.670e-01  
+ CG31   -2.425209e+03  -3.259701e-06  7.259e-09  1.009e+00  
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                       total               20.214         17        1.2       1e+02     %
+   Driver              driver_line         20.156         1         20        1e+02     %
+   Ions                opt_ions            19.975         1         20        99        %
+   ESolver_KS_PW       Run                 19.975         1         20        99        %
+   Potential           update_from_charge  0.38652        32        0.012     1.9       %
+   Potential           cal_v_eff           0.38408        32        0.012     1.9       %
+   PW_Basis            real2recip          0.13147        285       0.00046   0.65      %
+   PotXC               cal_v_eff           0.32032        32        0.01      1.6       %
+   XC_Functional       v_xc                0.31583        32        0.0099    1.6       %
+   Symmetry            rho_symmetry        0.10105        32        0.0032    0.5       %
+   HSolverPW           solve               19.215         31        0.62      95        %
+   DiagoIterAssist     diagH_subspace      2.5467         155       0.016     13        %
+   OperatorPW          hPsi                11.383         11801     0.00096   56        %
+   Operator            EkineticPW          0.15787        11801     1.3e-05   0.78      %
+   Operator            VeffPW              9.9684         11801     0.00084   49        %
+   PW_Basis_K          recip2real          6.6909         17226     0.00039   33        %
+   PW_Basis_K          gathers_scatterp    0.59695        17226     3.5e-05   3         %
+   PW_Basis_K          real2recip          3.8907         15211     0.00026   19        %
+   PW_Basis_K          gatherp_scatters    1.0585         15211     7e-05     5.2       %
+   Operator            NonlocalPW          0.78593        11801     6.7e-05   3.9       %
+   Nonlocal            add_nonlocal_pp     0.45535        11801     3.9e-05   2.3       %
+   DiagoCG             diag_once           15.643         155       0.1       77        %
+   ElecStatePW         psiToRho            0.81554        31        0.026     4         %
+   Charge              mix_rho             0.12751        30        0.0043    0.63      %
+   Charge              Pulay_mixing        0.12631        30        0.0042    0.62      %
+ ----------------------------------------------------------------------------------------
+
+ START  Time  : Sat Dec  2 14:24:40 2023
+ FINISH Time  : Sat Dec  2 14:25:01 2023
+ TOTAL  Time  : 21
+ SEE INFORMATION IN : OUT.ABACUS/
