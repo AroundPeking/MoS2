@@ -8,7 +8,7 @@
 
 本测试基于`ABACUS`的赝势平面波计算，所有计算采用交换关联泛函为PBE的DFT方法(最后声子谱计算采用数值原子轨道)。$MoS_2$选择$2H$构型，即上下Sulfur层xy坐标一致。
 
-![MoS2](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/MoS2.jpeg)
+![MoS2](./resource/MoS2.jpeg)
 
 ## 参数收敛测试
 
@@ -22,13 +22,13 @@
 
 选择100 Ryd的能量截断
 
-![ecut](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/ecut.png)
+![ecut](./resource/ecut.png)
 
 ### 真空层厚度
 
 在13 $\AA$ 处已经基本收敛
 
-![vacuum](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/vacuum.png)
+![vacuum](./resource/vacuum.png)
 
 ## 几何结构优化
 
@@ -42,7 +42,7 @@ $$ \begin{pmatrix} a & 0 & 0 \\ -{1\over 2}a & -{\sqrt{3}\over 2}a & 0 \\ 0 & 0 
 
 二维平面晶格常数`a=3.04  `$\AA$
 
-![a](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/a.png)
+![a](./resource/a.png)
 
 ### 原子层厚度c
 
@@ -50,18 +50,18 @@ $$ \begin{pmatrix} a & 0 & 0 \\ -{1\over 2}a & -{\sqrt{3}\over 2}a & 0 \\ 0 & 0 
 
 z方向晶格常数`z=3.25`$\AA$ 
 
-![z](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/z.png)
+![z](./resource/z.png)
 
 ## 结构性质
 
 ### 态密度
 
-![tdos](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/tdos.png)
+![tdos](./resource//tdos.png)
 
 ### 能带
 
-![band](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/band.png)
+![band](./resource/band.png)
 
 ### 声子谱
 
-![MoS2_phonon](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/MoS2_phonon.png)
+![MoS2_phonon](./resource/MoS2_phonon.png)
