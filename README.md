@@ -16,7 +16,7 @@
 
 在7\*7\*1处基本收敛，最后选择8\*8\*1的k点采样
 
-![kmesh](/Users/ghj/Jupyter notebook/Optimization of basis sets/230924_restart_opt/plot/MoS2/kmesh.png)
+![kmesh](./resource/kmesh.png)
 
 ### 平面波能量截断
 
